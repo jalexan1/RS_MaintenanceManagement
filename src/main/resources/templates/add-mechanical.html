@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Adicionar Mecánico</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">
+		<link rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+			integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+			crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+	</head>
+	
+	<body>
+		<div class="container my-5">
+		<h3>Crear Mecánico</h3>
+			<div class="card">
+				<div class="card-body">
+					<div class="col-md-10">
+						<form action="#" th:action="@{/V1/management/mechanical}" th:object="${createMechanicalRq}" method="post">
+						
+							<div class="row">
+								
+								<div class="form-group col-md-8">
+									<label for="typeDocument" class="col-form-label">Tipo Documento</label> 
+									<input type="text" th:field="*{typeDocument}" class="form-control" 
+										id="typeDocument" placeholder="Tipo de documento del mecánico"> 
+									<spanth:if="${#fields.hasErrors('typeDocument')}" th:errors="*{typeDocument}" class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="document" class="col-form-label">Documento</label> <input
+										type="text" th:field="*{document}" class="form-control" id="document"
+										placeholder="Número de documento del mecánico"> <span
+										th:if="${#fields.hasErrors('document')}" th:errors="*{document}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="firstName" class="col-form-label">Primer Nombre</label> <input
+										type="text" th:field="*{firstName}" class="form-control" id="firstName"
+										placeholder="Ingrese el Primer Nombre del mecánico"> <span
+										th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="secondName" class="col-form-label">Segundo Nombre</label> <input
+										type="text" th:field="*{secondName}" class="form-control" id="secondName"
+										placeholder="Ingrese el Segundo Nombre del mecánico"> <span
+										th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="firstSurname" class="col-form-label">Primer Apellido</label> <input
+										type="text" th:field="*{firstSurname}" class="form-control" id="firstSurname"
+										placeholder="Ingrese el Primer Apellido del mecánico"> <span
+										th:if="${#fields.hasErrors('firstSurname')}" th:errors="*{firstSurname}"
+										class="text-danger"></span>
+								</div>
+	
+								<div class="form-group col-md-8">
+									<label for="secondSurname" class="col-form-label">Segundo Apellido</label> <input
+										type="text" th:field="*{secondSurname}" class="form-control"
+										id="secondSurname" placeholder="Ingrese el Segundo Apellido del mecánico"> <span
+										th:if="${#fields.hasErrors('secondSurname')}" th:errors="*{secondSurname}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="mobile" class="col-form-label">Número Celular</label> <input
+										type="text" th:field="*{mobile}" class="form-control"
+										id="mobile" placeholder="Ingrese el número de celular"> <span
+										th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="direction" class="col-form-label">Dirección Residencia</label> <input
+										type="text" th:field="*{direction}" class="form-control"
+										id="direction" placeholder="Ingrese la Dirección de Residencia"> <span
+										th:if="${#fields.hasErrors('direction')}" th:errors="*{direction}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="emailElectronic" class="col-form-label">Correo Electrónico</label> <input
+										type="text" th:field="*{emailElectronic}" class="form-control"
+										id="emailElectronic" placeholder="Ingrese el Correo Electrónico"> <span
+										th:if="${#fields.hasErrors('emailElectronic')}" th:errors="*{emailElectronic}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="form-group col-md-8">
+									<label for="state" class="col-form-label">Estado Registro</label> <input
+										type="text" th:field="*{state}" class="form-control"
+										id="state" placeholder="Ingrese el estado del registro"> <span
+										th:if="${#fields.hasErrors('state')}" th:errors="*{state}"
+										class="text-danger"></span>
+								</div>
+								
+								<div class="col-md-6">
+									<input type="submit" class="btn btn-primary" value="Crear Registro">
+									<a th:href="@{/}" class="btn btn-outline-danger">Cancelar</a>
+								</div>
+	
+								<div class="form-group col-md-8"></div>
+	
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
